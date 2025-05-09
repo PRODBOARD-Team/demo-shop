@@ -6,24 +6,26 @@ export const TV_ZONE: TemplateCategory = {
   image:  '/assets/img/home-v2/blog-02.jpg',
   description: "TV Zone Description",
   planner: {
-    company: "presentation",
-    instance: "demo",
+    company: "demoshop",
+    instance: "living",
   },
   templates: [
     {
-
       id: "sample-1",
-      name: 'Sofa & Chair',
-      description: "All the Lorem Ipsum generators on the Internet tend to repeat predefined on the Internet. Lorem ipsum dolor sit amet, consectetur vulputate posuere habitant vel tempor varius.",
+      name: 'Мебельная стенка',
+      description: `В этом планировщике отображается модель стенки в интерьере комнаты. Пользователь может ознакомиться с проектом, внести изменения по своему вкусу, а также оформить заказ прямо через интерфейс. 
+       Функциональность планировщика сведена к основному минимуму — чтобы ничто не отвлекало пользователя от проектирования и восприятия готового решения.`,
       tag: 'Design',
       images: [
-        '/assets/img/gallery/portfolio-02/portfolio-01.jpg',
-        '/assets/img/gallery/portfolio-02/portfolio-02.jpg',
-        '/assets/img/gallery/portfolio-02/portfolio-03.jpg',
+        // "C:\GIT\git_demo_shop\demo-shop\src\assets\img\gallery\TV"
+        '/assets/img/gallery/TV/1.png',
+        '/assets/img/gallery/TV/2.png',
+        '/assets/img/gallery/TV/3.png'
       ],
       props: [
-        { name: "Serie", value: "Classic" },
-        { name: "Color", value: "Red" }
+     //   { name: "Serie", value: "Classic" },
+     //   { name: "Color", value: "Red" }
+     
       ],
       integration: {
         info: [
@@ -31,9 +33,9 @@ export const TV_ZONE: TemplateCategory = {
           { title: "Title 2", desc: "Description 2" }
         ],
         settings: {
-          company: "presentation",
-          instance: "demo-mini",
-          start: { guid: "W3bNKUsMe0qH4jrl0LcNUw", clone: true }
+          company: "demoshop",
+          instance: "living",
+          start: { guid: "E1Ajmnv7UWsg0wvUvRAQ", clone: true }
         }
       }
     }
