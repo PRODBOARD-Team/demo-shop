@@ -1,0 +1,63 @@
+<div class="max-w-[800px] mx-auto rounded-b-[30px] w-full bg-invoice dark:bg-dark-secondary pt-[30px] px-[30px] md:px-[40px] pb-[30px] md:pb-[40px] border border-[#17243026] dark:border-bdr-clr-drk border-opacity-15">
+  <div class="overflow-x-auto border-t-dashed block border-dashed border-title pb-[30px] aos-init aos-animate">
+      <table class="min-w-full">
+          <thead>
+              <tr>
+                  <th class="py-3 text-left font-semibold leading-none text-2xl text-title dark:text-white whitespace-nowrap">Product Info</th>
+                  <th class="py-3 px-4 text-center font-semibold leading-none text-2xl text-title dark:text-white whitespace-nowrap">Quantity</th>
+                  <th class="py-3 px-4 text-center font-semibold leading-none text-2xl text-title dark:text-white whitespace-nowrap">Price</th>
+                  <th class="py-3 text-right font-semibold leading-none text-2xl text-title dark:text-white whitespace-nowrap">Total</th>
+              </tr>
+          </thead>
+          <tbody>
+            @for(item of items; track item){
+              <tr class='border-b border-solid border-title dark:border-bdr-clr-drk border-opacity-10'>
+                <td class="py-4 flex items-center whitespace-nowrap">
+                    <div class="min-w-[100px] max-w-[110px] max-h-[80px] mr-4">
+                        <img class="w-full h-full max-w-[100px] max-h-[80px]" [src]="item.image" alt="shape">
+                    </div>
+                    <div>
+                        <p class="text-sm text-paragraph dark:text-white font-medium">Chair</p>
+                        <p class="text-base sm:text-lg text-title dark:text-white font-semibold pt-3 whitespace-nowrap">{{item.name}}</p>
+                    </div>
+                </td>
+                <td class="py-4 px-4 text-center text-base text-paragraph dark:text-white font-semibold">{{item.quantity}}</td>
+                <td class="py-4 px-4 text-center text-base text-paragraph dark:text-white font-semibold">${{item.unit}}</td>
+                <td class="py-4 text-right text-base text-paragraph dark:text-white font-semibold">${{item.total}}</td>
+            </tr>
+            }
+
+             
+          </tbody>
+      </table>
+  </div>
+
+  <div class="border-t border-t-dashed border-t-title dark:border-bdr-clr-drk pt-7 block border-b border-dashed border-title pb-7 aos-init aos-animate">
+      <div>
+          <div class="max-w-[325px] flex justify-end flex-col w-full ml-auto mr-0">
+              <div class="flex justify-between flex-wrap text-base sm:text-lg text-title dark:text-white font-medium">
+                  <span>Sub Total:</span>
+                  <span>$870</span>
+              </div>
+              <div class="flex justify-between flex-wrap text-base sm:text-lg text-title dark:text-white font-medium mt-3">
+                  <span>Coupon Discount:</span>
+                  <span>-$20</span>
+              </div>
+              <div class="flex justify-between flex-wrap text-base sm:text-lg text-title dark:text-white font-medium mt-3">
+                  <span>Delivery Fee:</span>
+                  <span>$5</span>
+              </div>
+              <div class="flex justify-between flex-wrap text-base sm:text-lg text-title dark:text-white font-medium mt-3">
+                  <span>VAT:</span>
+                  <span> $5</span>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="max-w-[325px] flex justify-end flex-col w-full ml-auto mr-0">
+      <div class="flex justify-between flex-wrap font-bold leading-none mt-[30px] text-lg">
+          <span>Total:</span>
+          <span>&nbsp;$850</span>
+      </div>
+  </div>
+</div>

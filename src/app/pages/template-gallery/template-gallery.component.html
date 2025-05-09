@@ -1,0 +1,11 @@
+<navbar-default/>
+
+<breadcrumbs [data]="[{name: category.name, path: category.code}]">
+</breadcrumbs>
+
+<gallery [items]="category.templates" [navigateTo]="['/', category.code]">
+</gallery>
+
+<footer-default></footer-default>
+
+

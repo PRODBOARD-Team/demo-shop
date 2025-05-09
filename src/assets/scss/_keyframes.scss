@@ -1,0 +1,28 @@
+.scroll-down-icon {
+    animation: slidein 1s linear infinite;
+}
+
+@keyframes slidein {
+    from {
+      transform: translateY(-80%);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateY(80%);
+      opacity: 1;
+    }
+}
+
+// Banner v6
+@keyframes hv6_Banner {
+  0% {
+      background-image: url('../img/home-v6/banner-01.png');
+  }
+  50% {
+      background-image: url('../img/home-v6/banner-02.png');
+  }
+  100% {
+      background-image: url('../img/home-v6/banner-03.png');
+  }
+}

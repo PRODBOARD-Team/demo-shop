@@ -1,0 +1,115 @@
+<navbar-home />
+<!-- header -->
+<div
+  class="pt-40 sm:pt-52 lg:pt-[280px] pb-52 lg:pb-[350px] 2xl:pb-[450px] bg-overlay dark:before:bg-title dark:before:bg-opacity-70"
+  style="background-image: url('assets/img/home-v4/banner-bg.jpg')"
+>
+  <div class="container">
+    <div class="max-w-[751px] mx-auto">
+      <h2
+        class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-snug sm:leading-snug md:leading-snug lg:leading-snug"
+      >
+        A Collection of Demos
+      </h2>
+      <div>
+        <a
+          [routerLink]="'/kitchen/planner'"
+          class="group md:text-lg font-medium leading-none text-title dark:text-white flex items-center gap-3 mt-3"
+        >
+          <span class="text-underline leading-none">Go to Planner</span>
+          <svg
+            class="fill-current text-title dark:text-white w-5 md:w-7"
+            viewBox="0 0 31 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M30.2303 6.58892C30.5232 6.29603 30.5232 5.82116 30.2303 5.52826L25.4574 0.755293C25.1645 0.462399 24.6896 0.462399 24.3967 0.755293C24.1038 1.04819 24.1038 1.52306 24.3967 1.81595L28.6393 6.05859L24.3967 10.3012C24.1038 10.5941 24.1038 11.069 24.3967 11.3619C24.6896 11.6548 25.1645 11.6548 25.4574 11.3619L30.2303 6.58892ZM0 6.80859L29.7 6.80859V5.30859L0 5.30859L0 6.80859Z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="s-py-100 overflow-hidden">
+  <div class="container-fluid">
+    <div class="max-w-[1720px] mx-auto mb-5 md:mb-6" >
+      <h3 class="font-medium leading-none text-2xl md:text-3xl">
+        Demos by Product Category
+      </h3>
+    </div>
+  </div>
+  <div >
+    <owl-carousel-o
+      #owlCarousel
+      [options]="customOptions"
+      class="owl-carousel home-v2-blog max-w-lg lg:max-w-[750px] mx-auto block"
+    >
+      <ng-container *ngFor="let item of categories">
+        <ng-template carouselSlide>
+          <div class="relative group">
+            <a [routerLink]="'/blog-details-v1'" class="overflow-hidden block">
+              <img
+                class="duration-300 transform scale-100 group-hover:scale-110 w-full"
+                [src]="item.image"
+                alt="blog-card"
+              />
+            </a>
+            <div
+              class="sm:bg-white sm:bg-opacity-90 sm:dark:bg-title sm:dark:bg-opacity-90 mt-4 sm:p-5 md:p-6 sm:absolute z-10 bottom-0 left-0 sm:w-11/12 max-w-md px-5 sm:px-0"
+            >
+              <ul class="flex items-center gap-[10px] flex-wrap">
+
+                <li>
+                  <a
+                    [routerLink]="'/blog-tag'"
+                    class="inline-block text-title font-medium text-[15px] leading-none py-[10px] px-5 rounded-md bg-primary-midum"
+                    >{{ item.name }}</a
+                  >
+                </li>
+              </ul>
+              <h5
+                class="mt-3 font-medium dark:text-white leading-[1.5] text-xl"
+              >
+                <a [routerLink]="'/blog-details-v1'" class="text-underline">{{
+                  item.description
+                }}</a>
+              </h5>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</div>
+
+
+
+<div class="s-py-100-50">
+  <div class="container">
+      <div class="max-w-1366 mx-auto">
+          <div class="flex items-center justify-between gap-5 flex-wrap mb-6 pb-4 md:pb-6 border-b border-bdr-clr dark:border-bdr-clr-drk" >
+              <h2 class="font-semibold leading-none text-2xl sm:text-3xl lg:text-4xl">Products</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-[30px]">
+            <div *ngFor="let item of products.slice(0,4)" class="group">
+                <a [routerLink]="'/blog-details-v1'" class="overflow-hidden block">
+                    <img class="duration-300 transform scale-100 group-hover:scale-110 w-full" [src]="item.image" alt="blog-card">
+                </a>
+                <div class="p-5 relative z-10 before:absolute before:-z-10 before:top-0 before:left-0 before:w-full before:h-full before:bg-primary dark:before:bg-dark-secondary before:bg-opacity-10 before:transition-all before:duration-300 overflow-hidden before:opacity-0 group-hover:before:opacity-100">
+                    <ul class="flex items-center gap-[10px] flex-wrap">
+
+                        <li><a [routerLink]="'/blog-tag'" class="inline-block text-title font-medium text-[15px] leading-none py-[10px] px-5 rounded-md bg-primary-midum">{{item.tag}}</a></li>
+                    </ul>
+                    <h5 class="mt-3 font-medium text-xl dark:text-white leading-[1.5]"><a [routerLink]="['/product', item.id]" class="text-underline">{{item.name}}</a></h5>
+                    <p class="text-base md:text-lg mt-3 dark:text-white-light">{{item.description}}</p>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<footer-default></footer-default>

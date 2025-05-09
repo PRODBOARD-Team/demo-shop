@@ -1,0 +1,54 @@
+<div
+  class="header-area default-header relative z-50 bg-white dark:bg-title"
+  [ngClass]="scroll ? 'sticky-header' : ''"
+>
+  <div class="container-fluid">
+    <div
+      class="flex items-center justify-between gap-x-6 max-w-[1720px] mx-auto relative py-[10px] sm:py-4 lg:py-0"
+    >
+      <!-- Logo -->
+      <div style="display: flex;gap:1em; align-items: center;">
+        <a
+          class="cursor-pointer block"
+          href="https://prodboard.com"
+          target="_blank"
+        >
+          <img
+            [src]="'https://prodboard.com/images/logo.webp'"
+            alt=""
+            class="w-[60px] sm:w-[60px]"
+          />
+        </a>
+
+        <h3>Demo shop</h3>
+      </div>
+
+      <!-- Menu -->
+      <div
+        class="main-menu absolute z-50 w-full lg:w-auto top-full left-0 lg:static bg-white dark:bg-title lg:bg-transparent lg:dark:bg-transparent px-5 sm:px-[30px] py-[10px] sm:py-5 lg:px-0 lg:py-0"
+        [ngClass]="toggle ? 'active' : ''"
+      >
+        <ul
+          class="text-lg leading-none text-title dark:text-white lg:flex lg:gap-[30px]"
+        >
+          <li [ngClass]="current === '/index' ? 'active' : ''">
+            <a [routerLink]="'/index'">Home</a>
+          </li>
+          @for (category of categories; track category) {
+          <li
+            routerLinkActive
+            #link="routerLinkActive"
+            [ngClass]="link.isActive ? 'active' : ''"
+          >
+            <a [routerLink]="'/' + category.code">{{ category.name }}</a>
+          </li>
+          }
+
+          <li [ngClass]="current === '/products' ? 'active' : ''">
+            <a [routerLink]="'/products'">Products</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
