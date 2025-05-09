@@ -18,9 +18,9 @@ export const TV_ZONE: TemplateCategory = {
       tag: 'Design',
       images: [
         // "C:\GIT\git_demo_shop\demo-shop\src\assets\img\gallery\TV"
-        '/assets/img/gallery/TV/1.png',
-        '/assets/img/gallery/TV/2.png',
-        '/assets/img/gallery/TV/3.png'
+        '/assets/images/TV/01.png',
+        '/assets/images/TV/2.png',
+        '/assets/images/TV/3.png',
       ],
       props: [
      //   { name: "Serie", value: "Classic" },
